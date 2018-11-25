@@ -3,6 +3,7 @@ import 'package:myblog/model/travel.dart';
 
 // pages
 import './../pages/new_page.dart';
+import './../login.dart';
 
 class MyDrawer extends StatelessWidget {
   final List<Travel> myListTravel;
@@ -50,8 +51,10 @@ class MyDrawer extends StatelessWidget {
             ),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => NewPage("Logout")));
+              Navigator.pushReplacement(
+                context, 
+                MaterialPageRoute(builder: (BuildContext context) => Login())
+              );
             },
           ),
         ],

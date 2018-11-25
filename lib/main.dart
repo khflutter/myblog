@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Pages
 import './pages/home.dart';
+import './login.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,8 +11,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  var _activePage = 0;
+  var _pages = [Login(), Home()];
   void initState() { 
     super.initState();
+    
   }
   @override
   Widget build(BuildContext context) {
@@ -19,9 +23,9 @@ class _MyAppState extends State<MyApp> {
       title: "My App",
       theme: ThemeData(
         primarySwatch: Colors.red,
-        fontFamily: "Nunito"
+        fontFamily: "Nunito",
       ),
-      home: Home(),
+      home: _pages[_activePage],
     );
   }
 }
