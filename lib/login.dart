@@ -22,7 +22,7 @@ class _LoginState extends State<Login> {
             child: Column(
               children: <Widget>[
                 Text(
-                  "Welcome My App",
+                  "Welcome to My App",
                   style: Theme.of(context).textTheme.headline,
                 ),
                 SizedBox(height: 25.0),

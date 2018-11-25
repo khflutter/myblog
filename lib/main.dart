@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 // Pages
-import './pages/home.dart';
+// import './pages/home.dart';
+// import './pages/new_travel.dart';
 import './login.dart';
 
 void main() => runApp(MyApp());
@@ -11,8 +12,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var _activePage = 0;
-  var _pages = [Login(), Home()];
   void initState() { 
     super.initState();
     
@@ -25,7 +24,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.red,
         fontFamily: "Nunito",
       ),
-      home: _pages[_activePage],
+      home: Login(),
     );
   }
 }
