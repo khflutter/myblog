@@ -11,13 +11,32 @@ class ShowTravel extends StatelessWidget {
         title: Text(travel.getTitle()),
       ),
       body: Container(
+        color: Colors.white,
         child: ListView(
           children: <Widget>[
             Column(
               children: <Widget>[
                 Image.asset(travel.getImage()),
-                Text(travel.getDate()),
-                Text(travel.getDescription())
+                Container(
+                  padding: EdgeInsets.all(25.0),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        travel.getDate(),
+                        style: Theme.of(context).textTheme.title
+                      ),
+                      SizedBox(height: 10.0),
+                      Text(
+                        travel.getDescription(),
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          fontFamily: "Nunito",
+                          fontSize: 20.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ],
