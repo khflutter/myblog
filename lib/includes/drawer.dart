@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myblog/model/travel.dart';
-import 'package:myblog/pages/home.dart';
 
 // pages
-// import './../pages/new_page.dart';
 import './../login.dart';
-import './../pages/new_travel.dart';
+import './../pages/travel/create.dart';
 
 class MyDrawer extends StatelessWidget {
   final List<Travel> myListTravel;
@@ -26,8 +24,6 @@ class MyDrawer extends StatelessWidget {
             ),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (ctxt) => Home()));
             },
             selected: true,
           ),
@@ -39,12 +35,10 @@ class MyDrawer extends StatelessWidget {
             ),
             onTap: () {
               Navigator.pop(context);
-              Travel newTravel = new Travel("My Holidy", "16th, Nov, 2018",
-                  "assets/images/item.jpg", "loremove");
-              myListTravel.add(newTravel);
-              print(myListTravel.length);
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (ctxt) => NewTravel()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (ctxt) => NewTravel(myListTravel)));
             },
           ),
           ListTile(
@@ -56,9 +50,9 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               Navigator.pushReplacement(
-                context, 
-                MaterialPageRoute(builder: (BuildContext context) => Login())
-              );
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => Login()));
             },
           ),
         ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // Pages
-// import './pages/home.dart';
+import './pages/home.dart';
 // import './pages/new_travel.dart';
 import './login.dart';
 
@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.red,
         fontFamily: "Nunito",
       ),
-      home: Login(),
+      home: Home(),
     );
   }
 }

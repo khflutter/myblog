@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myblog/model/travel.dart';
+import 'package:myblog/pages/travel/show.dart';
 
 class MyCard extends StatelessWidget {
   final Travel travel;
@@ -12,16 +13,16 @@ class MyCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const ListTile(
+          ListTile(
             leading: Icon(Icons.album),
-            title: Text('The Enchanted Nightingale'),
-            subtitle: Text("20th, Nov, 2018"),
+            title: Text(travel.getTitle()),
+            subtitle: Text(travel.getDate()),
           ),
-          Image.asset("assets/images/item3.jpg"),
+          Image.asset(travel.getImage()),
           Container(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+              travel.getDescription(),
               style: TextStyle(fontFamily: "Nunito", fontSize: 18.0),
               textAlign: TextAlign.justify,
             ),
@@ -32,9 +33,8 @@ class MyCard extends StatelessWidget {
                 IconButton(
                   icon: Icon(Icons.arrow_forward),
                   onPressed: () {
-                    print(travel.getTitle());
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ShowTravel(travel)));
                   },
-                  tooltip: "New Page",
                 ),
               ],
             ),
